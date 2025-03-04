@@ -38,7 +38,7 @@ const Home = () => {
 			<h1 className="text-2xl font-bold mb-5">Edit Me</h1>
 
 			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-				{images.map((image: any) => (
+				{images.map((image: ImageData) => (
 					<div
 						key={image.id}
 						className="overflow-hidden border rounded-md"
