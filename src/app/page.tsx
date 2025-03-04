@@ -5,11 +5,16 @@ import { useEffect, useState } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 
 const IMAGES_PER_PAGE = 12
+interface ImageData {
+	id: string
+	author: string
+	download_url: string
+}
 
 const Home = () => {
 	const searchParams = useSearchParams()
 	const router = useRouter()
-	const [images, setImages] = useState([])
+	const [images, setImages] = useState<ImageData[]>([])
 	const page = Number(searchParams.get('page')) || 1
 
 	const fetchImages = async (page: number) => {
